@@ -39,12 +39,13 @@ public class ControlGerente extends ControlEstoquista {
             if (Data.estoquistas.containsKey(id)) throw new Exception("id já cadastrado");
             Data.estoquistas.put(id, (Estoquista) f);
             System.out.println("Estoquista cadastrado com suceso");
-
+            Data.funcionarios.add(f);
         }
         else if (f instanceof Gerente){
             if (Data.gerentes.containsKey(id)) throw new Exception("id já cadastrado");
             Data.gerentes.put(id, (Gerente) f);
             System.out.println("Gerente cadastrado com sucesso");
+            Data.funcionarios.add(f);
         }
         else{
             throw new RuntimeException("erro ao cadastrar o funcionário");

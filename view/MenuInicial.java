@@ -7,9 +7,9 @@ public class MenuInicial extends ViewModel{
     public void show(Data data) {
         while (true) {
             println("-----Main menu-----");
-            println("1. loginF\n" +
-                    "2. loginG\n" +
-                    "3. showAll\n" +
+            println("1. login Funcionário\n" +
+                    "2. login Gerente\n" +
+                    "3. Mostrar todos os dados cadastrados\n" +
                     "4. end");
 
             try {

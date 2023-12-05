@@ -32,6 +32,7 @@ public class CrudGerentes extends ViewModel{
                         println("preencha as informações do novo Gerente :");
                         print("id: ");
                         id = toInt(input());
+                        if (id <= 0){println("falha ao cadastrar: o id deve ser maior do que 0"); break;}
                         print("nome: ");
                         nome = input();
                         print("senha: ");
@@ -40,7 +41,6 @@ public class CrudGerentes extends ViewModel{
                         salario = toDouble(input());
                         print("adicional salario: ");
                         adicionalSalario = toDouble(input());
-                        if (id <= 0){println("falha ao cadastrar: o id deve ser maior do que 0"); break;}
                         if (salario <= 0 || adicionalSalario <= 0) {
                             println("falha ao cadastrar: salario e adicional salario devem ser maiores que 0");
                             break;

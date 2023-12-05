@@ -3,11 +3,14 @@ import model.*;
 
 
 import java.util.*;
+import java.io.FileReader;
+import java.io.BufferedReader;
+
 public class Data {
     protected static Map<Integer, Produto> produtos;
     protected static Map<Integer, Estoquista> estoquistas;
     protected static Map<Integer, Gerente> gerentes;
-
+    protected static List<Funcionario> funcionarios;
     protected static int prodId = 1, funcId = 1, gereId = 1;
     //essas variavéis estão aqui caso surja a necessidade de id autoincrementado.
 
@@ -15,6 +18,7 @@ public class Data {
         produtos = new LinkedHashMap<Integer, Produto>();
         estoquistas = new LinkedHashMap<Integer, Estoquista>();
         gerentes = new LinkedHashMap<Integer, Gerente>();
+        funcionarios = new LinkedList<Funcionario>();
     }
 
     @Override
@@ -76,7 +80,25 @@ public class Data {
         }
 
     }
-
+//    public void lerDados(String arquivo) throws Exception {
+//        // Abra o arquivo de texto
+//        FileReader fr = new FileReader("data.txt");
+//        BufferedReader br = new BufferedReader(fr);
+//
+//        // Leia o conteúdo do arquivo linha por linha
+//        String linha;
+//        while ((linha = br.readLine()) != null) {
+//            // Converta a linha em um objeto Produto
+//            Produto produto = new Produto();
+//
+//            // Adicione o produto ao map
+//            Estoquista e = new Estoquista("", 0, "");
+//            produtos.putIfAbsent(produtos.get(produto), produto);
+//        }
+//
+//        // Feche o arquivo
+//        fr.close();
+//    }
     //getters e setters
     public Produto getProdutoById (int id){
         return produtos.get(id);

@@ -31,13 +31,13 @@ public class CrudEstoquistas extends ViewModel{
                         println("preencha as informações do novo Estoquista :");
                         print("id: ");
                         id = toInt(input());
+                        if (id <= 0) {println("falha ao cadastrar: o id deve ser maior do que 0"); break;}
                         print("nome: ");
                         nome = input();
                         print("senha: ");
                         senha = input();
                         print("salario: ");
                         salario = toDouble(input());
-                        if (id <= 0) {println("falha ao cadastrar: o id deve ser maior do que 0"); break;}
                         if (salario <= 0) { println("falha ao cadastrar: salario deve ser maior que 0"); break;}
                         gerente.addFuncionario(id, new Estoquista(nome, salario, senha));
                         break;
@@ -46,6 +46,7 @@ public class CrudEstoquistas extends ViewModel{
                         println("preencha as informações para atualizar o Estoquista");
                         print("id do Estoquista a ser atualizado: ");
                         id = toInt(input());
+                        if (id <= 0) {println("falha ao atualizar: o id deve ser maior do que 0"); break;}
                         println("agora preencha todas as informações que serão colocadas no funcionario");
                         print("nome: ");
                         nome = input();
@@ -53,8 +54,7 @@ public class CrudEstoquistas extends ViewModel{
                         senha = input();
                         print("salario: ");
                         salario = toDouble(input());
-                        if (id <= 0) {println("falha ao cadastrar: o id deve ser maior do que 0"); break;}
-                        if (salario <= 0) { println("falha ao cadastrar: salario deve ser maior que 0"); break;}
+                        if (salario <= 0) { println("falha ao atualizar: salario deve ser maior que 0"); break;}
                         gerente.updateEstoquista(id, new Estoquista(nome, salario, senha));
                         break;
 

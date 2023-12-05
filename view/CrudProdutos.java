@@ -46,6 +46,7 @@ public class CrudProdutos extends ViewModel{
                         println("preencha as informações do novo produto:");
                         print("id: ");
                         id = toInt(input());
+                        if (id < 1){println("falha ao cadastrar: o id deve ser maior do que 0"); break;}
                         print("nome: ");
                         nome = input();
                         print("tipo: ");
@@ -54,7 +55,6 @@ public class CrudProdutos extends ViewModel{
                         qtd = toInt(input());
                         print("preco: ");
                         preco = toDouble(input());
-                        if (id < 1){println("falha ao cadastrar: o id deve ser maior do que 0"); break;}
                         if (preco <= 0 || qtd <= 0){println("falha ao cadastrar: a quantidade e o preco devem ser maiores que 0"); break;}
                         estoquista.addProduto(id, new Produto(nome, data.createType(tipo), qtd, preco));
                         break;
@@ -62,6 +62,7 @@ public class CrudProdutos extends ViewModel{
                         println("preencha as informações para atualizar o produto");
                         print("id do produto a ser atualizado: ");
                         id = toInt(input());
+                        if (id < 1){println("o id deve ser maior do que 0"); break;}
                         println("agora preencha todas as informações que serão colocadas no produto");
                         print("nome: ");
                         nome = input();
@@ -71,8 +72,7 @@ public class CrudProdutos extends ViewModel{
                         qtd = toInt(input());
                         print("preco: ");
                         preco = toDouble(input());
-                        if (id < 1){println("o id deve ser maior do que 0"); break;}
-                        if (preco <= 0 || qtd <= 0){println("a quantidade e o preco devem ser maiores que 0"); break;}
+                        if (preco <= 0 || qtd <= 0){println("falha ao atualizar: a quantidade e o preco devem ser maiores que 0"); break;}
                         estoquista.updateProduto(id, new Produto(nome, data.createType(tipo), qtd, preco));
                         break;
 

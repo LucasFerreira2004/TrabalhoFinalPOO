@@ -17,7 +17,6 @@ public class Produto {
 
     @Override
     public String toString(){
-        //return "[ " + this.label+":"+this.type+":"+this.qtd+":"+this.price+" R$" + "] ";
         DecimalFormat f = new DecimalFormat("0.00");
         String s = "nome: " + this.label
                 + "\ntipo: " + this.type.toString().toLowerCase()
@@ -61,4 +60,5 @@ public class Produto {
     public void setPrice(double price) {
         this.price = price;
     }
+
 }
